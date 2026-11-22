@@ -1,1 +1,104 @@
-PLACEHOLDER_CSS
+:root {
+  --bg: #0f1115;
+  --fg: #e8e6e3;
+  --accent: #ff6b35;
+  --muted: #8a8680;
+  --card: #1a1d24;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 1.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+}
+header h1 { margin: 0 0 0.25rem; font-size: 1.75rem; }
+header p { margin: 0 0 1.5rem; color: var(--muted); }
+#status {
+  padding: 0.75rem 1rem;
+  background: var(--card);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.controls label { display: flex; flex-direction: column; font-size: 0.85rem; color: var(--muted); }
+.controls input, .controls select {
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  background: var(--card);
+  border: 1px solid #333;
+  color: var(--fg);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.card {
+  background: var(--card);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0.75rem;
+  text-align: left;
+  color: var(--fg);
+  cursor: pointer;
+}
+.card.on { border-color: var(--accent); }
+.card b { display: block; margin-bottom: 0.25rem; }
+.card span { font-size: 0.8rem; color: var(--muted); }
+.bars {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.bar {
+  flex: 1;
+  background: var(--card);
+  border-radius: 6px;
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid #333;
+}
+.bar.active { border-color: var(--accent); background: #2a1f1a; }
+.bar .n { font-size: 0.75rem; color: var(--muted); }
+.bar .c { font-weight: 600; }
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.actions button {
+  padding: 0.6rem 1rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.actions button:hover { opacity: 0.9; }
+#punch {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-size: 0.85rem;
+  overflow-x: auto;
+}
+footer { margin-top: 2rem; font-size: 0.8rem; color: var(--muted); }
+@media (max-width: 600px) {
+  .controls { flex-direction: column; }
+  .bars { flex-wrap: wrap; }
+}
